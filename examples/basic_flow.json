@@ -1,0 +1,109 @@
+[
+    {
+        "id": "184815afa763ddc2",
+        "type": "tab",
+        "label": "IPFS",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3382f1e1af0253cb",
+        "type": "inject",
+        "z": "184815afa763ddc2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "7efe52b826b4c5cf"
+            ]
+        ]
+    },
+    {
+        "id": "7efe52b826b4c5cf",
+        "type": "ipfs-add",
+        "z": "184815afa763ddc2",
+        "wallet": "951afeb49c065a9f",
+        "name": "",
+        "x": 400,
+        "y": 140,
+        "wires": [
+            [
+                "d0b40ace7ab5c26a"
+            ]
+        ]
+    },
+    {
+        "id": "0d88da0514934b88",
+        "type": "debug",
+        "z": "184815afa763ddc2",
+        "name": "Result",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "d0b40ace7ab5c26a",
+        "type": "ipfs-get",
+        "z": "184815afa763ddc2",
+        "wallet": "951afeb49c065a9f",
+        "name": "",
+        "x": 400,
+        "y": 240,
+        "wires": [
+            [
+                "0d88da0514934b88"
+            ]
+        ]
+    },
+    {
+        "id": "097387b22b9f90f3",
+        "type": "comment",
+        "z": "184815afa763ddc2",
+        "name": "Publish to IPFS",
+        "info": "",
+        "x": 120,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "c66c701486ad8eeb",
+        "type": "comment",
+        "z": "184815afa763ddc2",
+        "name": "Retrieve from IPFS",
+        "info": "",
+        "x": 410,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "951afeb49c065a9f",
+        "type": "ipfs-config",
+        "name": "IPFS Node"
+    }
+]

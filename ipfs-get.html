@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    RED.nodes.registerType('ipfs-get',{
+        category: 'IPFS',
+        color: '#FFEECA',
+        defaults: {
+            wallet: {value:"", type:"ipfs-config",required:true},
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "icons/node-red/file-in.svg",
+        label: function() {
+            this.wname = "IPFS:"+RED.nodes.node(this.wallet).name;
+            return (this.name||this.wname)||(this.wallet||"ipfs-get");
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="ipfs-get">
+    <div class="form-row">
+        <label for="node-input-wallet"><i class="fa fa-tag"></i> IPFS Node</label>
+        <input type="text" id="node-input-wallet" placeholder="IPFS Configuration">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="ipfs-get">
+    <p>Provides statistical information of stored certificates and presentations.</p>
+</script>

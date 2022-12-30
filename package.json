@@ -1,0 +1,36 @@
+{
+  "name": "node-red-ipfs",
+  "version": "0.5.0",
+  "description": "IPFS Nodes for Node-RED Event Automation",
+  "main": "lib.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/energychain/node-red-ipfs.git"
+  },
+  "keywords": [
+    "ipfs",
+    "node-red",
+    "stromdao",
+    "tydids"
+  ],
+  "author": "STROMDAO GmbH <dev@stromdao.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/energychain/node-red-ipfs/issues"
+  },
+  "homepage": "https://github.com/energychain/node-red-ipfs#readme",
+  "dependencies": {
+    "ipfs": "^0.65.0"
+  },
+  "node-red": {
+    "version": ">=2.0.0",
+    "nodes": {
+      "IPFS-Get":"ipfs-get.js",
+      "IPFS-Add":"ipfs-add.js",
+      "IPFS": "ipfs-config.js"
+    }
+  }
+}
